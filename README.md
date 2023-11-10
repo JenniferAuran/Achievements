@@ -3,6 +3,10 @@ Projects and achievements for 2023
 
 ## Software Chatbot Topic
 
+- **Images**
+
+![Chatbot_Software](/Images/Chatbot_Software.PNG)
+
 ## Hardware Check-in App
 - **The PowerApp**
 - I built a Power App for the frontend of hardware check-in for asset management.
@@ -48,5 +52,3 @@ UpdateContext({resetTrigger: false});
 - **Images**
 
 ![Hardware_UI](/Images/Hardware_UI.PNG)
-
-![Chatbot_Software](/Images/Chatbot_Software.PNG)
