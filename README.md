@@ -103,3 +103,21 @@ UpdateContext({resetTrigger: false});
 - Here is the Hardware for Computer screen
 
 ![Hardware_Computer](/Images/Hardware_Computer.PNG)
+
+
+- **Spencer Fane Custom Applications Menu**
+  
+- This is code for the buttons on the main page of the Spencer Fane Custom Applications Menu
+
+```
+// Navigation set for each button that will navigate to the live custom application
+
+Navigate('Appeal Questionnaire',ScreenTransition.Fade)
+Navigate('Email Access',ScreenTransition.Fade)
+Navigate('Firm Groups',ScreenTransition.Fade)
+Navigate('Location Access',ScreenTransition.Fade)
+```
+- **Image**
+- Here is the Spencer Fane Custom Applications Menu
+
+![Spencer Fane Custom Applications Menu](/Images/SF_Custom_Apps_Menu.PNG)
