@@ -104,8 +104,58 @@ UpdateContext({resetTrigger: false});
 
 ![Hardware_Computer](/Images/Hardware_Computer.PNG)
 
+## Mi-Fi Check-in App
+- **The Mi-Fi Power App Screen**
+- I built a screen into the Power App for the hardware check-in app for Mi-Fi management.
+```
+- This is the code for the submit button on the Mi-Fi check-in app
 
-- **Spencer Fane Custom Applications Menu**
+// Initialize trigger variables
+UpdateContext({resetTrigger: false, formSuccess: false});
+
+// Perform the data submission and check for errors
+Set(varError, 
+    IsError(
+        Patch(
+            'MiFi Submissions', 
+            Defaults('MiFi Submissions'),
+            {
+                Title: MiFiName.Selected.Name,
+                Date: Date_1.SelectedDate,
+                'Last Name, First Name': Trim(UserName_1.Selected.DisplayName),
+                // Swap the "Check-in" and "Check-out" text values to match the toggle's position
+                Status: {
+                    Value: If(CheckToggle.Value, "Check-out", "Check-in") // This assumes toggling to the right is "Check-out"
+                }
+            }
+        )
+    )
+);
+
+// If there was no error, navigate to SuccessScreen, else do something else (like showing an error message)
+If(
+    !varError,
+    Navigate(SuccessScreen, Transition.None)
+    // You can add an else clause here if you need to handle the error case
+);
+
+// Reset the input controls
+Reset(UserName_1);
+Reset(Date_1);
+Reset(MiFiName);
+Reset(LastName_1);
+
+// Update the context variables to clear the text input and Serial Number
+UpdateContext({resetTrigger: true, formSuccess: !varError});
+UpdateContext({resetTrigger: false});
+
+```
+- **Image**
+- **MiFi Checkin App Screen**
+
+![Spencer Fane Custom Applications Menu](/Images/MiFi_Checkin_App.PNG)
+
+
   
 - This is code for the buttons on the main page of the Spencer Fane Custom Applications Menu
 
